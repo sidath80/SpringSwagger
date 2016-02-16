@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TimekeeperCoreApplication {
 
 	public static void main(String[] args) {
+		System.out.println("Debug 1");
 		SpringApplication.run(TimekeeperCoreApplication.class, args);
 	}
 }
