@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+		"-//Puppy Crawl//DTD Check Configuration 1.1//EN"
+		"http://www.puppycrawl.com/dtds/configuration_1_1.dtd">
+
+<module name="Checker">
+
+	<metadata name="com.atlas-sw.eclipse" value="I like Sydney"/>
+	<property name="severity" value="error"/>
+
+	<module name="SuppressionFilter">
+		<property name="file" value="${checkstyle.basedir}/checkstyle/checkstyle-suppressions-main.xml"/>
+	</module>
+
+	<!--
+		"Since release 4.4 the following checks were changed from a Check to a FileSetCheck:" 
+			* Header
+		    * RegexpHeader
+		    * FileLength
+	-->
+	<module name="FileLength">
+		<property name="fileExtensions" value="java"/>
+	</module>
+
+	<module name="TreeWalker">
+
+		<property name="tabWidth" value="4"/>
+
+		<!-- By default, no whitespace allowed at the end of the line
+        <module name="GenericIllegalRegexp">
+            <property name="format" value="\s$"/>
+        </module>
+        -->
+
+		<module name="AvoidStarImport"/>
+		<module name="ConstantName"/>
+		<module name="AvoidNestedBlocks">
+			<property name="allowInSwitchCase" value="true"/>
+		</module>
+		<module name="EmptyBlock"/>
+		<module name="EmptyForIteratorPad"/>
+		<module name="EqualsHashCode"/>
+		<!-- Removed from recent versions (>5.6) of Checkstyle:
+			"Removed the DoubleCheckedLocking check, as in Java 5 (and beyond),
+			using the volatile keyword addresses the issue.
+			See <http://jeremymanson.blogspot.com.au/2008/05/double-checked-locking.html> for more details." -->
+        <!--<module name="DoubleCheckedLocking"/>-->
+		<module name="EmptyStatement"/>
+<!-- 
+
+		<module name="Header">
+			<property name="header"
+					  value="/**\n * (c) 2007 Smartpath\n "/>
+		</module>
+ -->
+
+		<module name="IllegalImport"/>
+		<module name="IllegalInstantiation"/>
+		<module name="InnerAssignment"/>
+		<module name="IllegalType">
+		    <property name="format" value="^(.*[\\.])?Abstract((?!Task).)*$"/>
+		</module>
+		<!-- Don't require javadoc
+				<module name="JavadocType">
+					<property name="authorFormat" value="\S"/>
+				</module>
+				<module name="JavadocMethod">
+					<property name="allowUndeclaredRTE" value="true"/>
+					<property name="allowThrowsTagsForSubclasses" value="true"/>
+				</module>
+				<module name="JavadocVariable"/>
+				-->
+
+		<module name="LeftCurly">
+			<property name="tokens" value="CLASS_DEF,INTERFACE_DEF,METHOD_DEF,CTOR_DEF,LITERAL_IF"/>
+			<property name="option" value="nl"/>
+		</module>
+		<module name="LeftCurly">
+			<property name="tokens"
+					  value="LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_SWITCH,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE"/>
+			<property name="option" value="nl"/>
+		</module>
+
+		<!-- Checks for Size Violations.                    -->
+		<!-- See http://checkstyle.sf.net/config_sizes.html -->
+		<module name="ExecutableStatementCount">
+			<property name="max" value="15"/>
+		</module>
+		<module name="LineLength">
+			<property name="max" value="120"/>
+			<property name="ignorePattern" value="^ *\* *[^ ]+$"/>
+			<property name="ignorePattern" value="^ *//.*"/>
+		</module>
+		<module name="AnonInnerLength">
+		 	<property name="max" value="23"/>
+ 		</module>
+		<module name="ParameterNumber">
+			<property name="max" value="7"/>
+			<property name="tokens" value="METHOD_DEF"/>
+		</module>
+		<module name="ParameterNumber">
+			<property name="max" value="12"/>
+			<property name="tokens" value="CTOR_DEF"/>
+		</module>
+
+		<module name="LocalFinalVariableName"/>
+		<module name="LocalVariableName"/>
+		<module name="MemberName"/>
+		<module name="MethodLength"/>
+		<module name="MethodName"/>
+		<module name="ModifierOrder"/>
+
+
+		<module name="NeedBraces"/>
+
+		<!-- Allow white space after the initial array brace (ARRAY_INIT) -->
+		<module name="NoWhitespaceAfter">
+			<property name="tokens" value="BNOT, DEC, DOT, INC, LNOT, UNARY_MINUS, UNARY_PLUS"/>
+		</module>
+
+		<module name="NoWhitespaceBefore"/>
+		<module name="NoWhitespaceBefore">
+			<property name="tokens" value="DOT"/>
+			<property name="allowLineBreaks" value="true"/>
+		</module>
+
+		<module name="OperatorWrap"/>
+		<module name="OperatorWrap">
+			<property name="tokens"
+					  value="ASSIGN, DIV_ASSIGN, PLUS_ASSIGN, MINUS_ASSIGN, STAR_ASSIGN, MOD_ASSIGN, SR_ASSIGN, BSR_ASSIGN, SL_ASSIGN, BXOR_ASSIGN, BOR_ASSIGN, BAND_ASSIGN"/>
+			<property name="option" value="eol"/>
+		</module>
+		<module name="PackageName"/>
+		<module name="ParameterName">
+			<!-- Use the default parameter names
+						<property name="format" value="^a[A-Z][a-zA-Z0-9]*$"/>
+					-->
+		</module>
+		<module name="ParenPad"/>
+		<module name="RedundantImport"/>
+		<module name="RedundantModifier"/>
+		<module name="RightCurly">
+			<property name="option" value="alone"/>
+		</module>
+		<module name="SimplifyBooleanExpression"/>
+		<module name="SimplifyBooleanReturn"/>
+		<module name="StaticVariableName"/>
+		<!-- Allow tab characters
+				<module name="TabCharacter"/>
+				-->
+		<module name="TypeName"/>
+		<module name="UnusedImports"/>
+		<module name="UpperEll"/>
+		<module name="VisibilityModifier"/>
+		<module name="WhitespaceAfter">
+			<property name="tokens" value="COMMA, SEMI"/>
+		</module>
+		<!--<module name="WhitespaceAround"/>-->
+		<module name="FinalClass"/>
+		<module name="MissingSwitchDefault"/>
+		<!--<module name="MagicNumber"/>-->
+		<module name="InterfaceIsType"/>
+
+		<module name="MutableException"/>
+		<module name="VisibilityModifier"/>
+
+		<!-- Metrics Checks -->
+		<module name="ClassFanOutComplexity">
+			<property name="max" value="101"/>
+		</module>
+		<module name="ClassDataAbstractionCoupling"/>
+		<module name="NPathComplexity"/>
+		<module name="CyclomaticComplexity"/>
+
+		<!-- Miscellaneous Checks -->
+		<module name="ArrayTypeStyle"/>
+		<module name="UncommentedMain"/>
+		<module name="UpperEll"/>
+
+
+		<module name="ThrowsCount">
+			<property name="max" value="2"/>
+		</module>
+		<!-- Couldn't get this to match Eclipse settings 25/8/03
+				<module name="Indentation">
+					<property name="severity" value="error"/>
+					<property name="basicOffset" value="4"/>
+					<property name="braceAdjustment" value="4"/>
+					<property name="caseIndent" value="4"/>
+				</module>
+				-->
+
+		<!-- module name="ReturnCount"/ -->
+		<module name="PackageDeclaration"/>
+		<module name="ExplicitInitialization"/>
+	</module>
+
+	<!-- module name="au.com.redhillconsulting.simian.SimianCheck">
+		<property name="failOnDuplication" value="false"/>
+	</module-->
+</module>

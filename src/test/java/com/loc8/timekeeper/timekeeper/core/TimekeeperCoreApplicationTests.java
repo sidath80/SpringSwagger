@@ -9,10 +9,14 @@ import com.loc8.timekeeper.timekeeper_core.TimekeeperCoreApplication;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = TimekeeperCoreApplication.class)
-public class TimekeeperCoreApplicationTests {
+public class TimekeeperCoreApplicationTests
+{
+	
 
 	@Test
-	public void contextLoads() {
+	public void contextLoads()
+	{
+		
 	}
 
 }
