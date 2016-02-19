@@ -1,22 +1,32 @@
 package com.loc8.timekeeper.timekeeper_core.jpa.domain;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.util.Assert;
 
 @Entity
-public class Project
+public class Project extends AbstractEntity
 {
-	@Id @GeneratedValue(strategy = GenerationType.AUTO) private String uuid;
 
 	private String name;
 
-	protected Project()
+	public Project(String name)
 	{
+
+		Assert.hasText(name);
+		this.name = name;
 	}
 
-	public Project(String name)
+	protected Project()
+	{
+
+	}
+
+	public String getName()
+	{
+		return name;
+	}
+
+	public void setName(String name)
 	{
 		this.name = name;
 	}
@@ -24,7 +34,7 @@ public class Project
 	@Override
 	public String toString()
 	{
-		return String.format("Project[uuid=%s, Name='%s']", uuid, name);
+		return name;
 	}
 
 }
