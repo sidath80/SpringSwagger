@@ -1,0 +1,5 @@
+<project>
+    <target name="run">
+        <java jar="target/timekeeper-web-0.0.1-SNAPSHOT.jar" fork="true"/>
+    </target>
+</project>
