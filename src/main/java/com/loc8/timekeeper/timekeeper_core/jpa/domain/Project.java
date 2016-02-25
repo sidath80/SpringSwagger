@@ -11,7 +11,6 @@ public class Project extends AbstractEntity
 
 	public Project(String name)
 	{
-
 		Assert.hasText(name);
 		this.name = name;
 	}

@@ -21,7 +21,6 @@ public class AbstractEntity
 
 	public String getId()
 	{
-		// TODO Auto-generated method stub
 		return id;
 	}
 

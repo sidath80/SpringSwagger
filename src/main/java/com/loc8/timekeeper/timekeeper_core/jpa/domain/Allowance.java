@@ -7,7 +7,7 @@ public class Allowance extends AbstractEntity
 {
 
 	private String name;
-	
+
 	public String getName()
 	{
 		return name;
