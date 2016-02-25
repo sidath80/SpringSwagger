@@ -34,7 +34,7 @@ public class ProjectRepositoryTests
 	@Test
 	public void addProject()
 	{
-		Project project =new Project("Test_Project");
+		Project project =new Project("Test_UUID_Project_one");
 		project=repository.save(project);
 		assertThat(project.getId(), is(notNullValue()));
 	}
