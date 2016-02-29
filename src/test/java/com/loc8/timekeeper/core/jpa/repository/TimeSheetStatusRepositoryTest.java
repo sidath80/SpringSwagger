@@ -1,4 +1,4 @@
-package com.loc8.timekeeper.timekeeper_core;
+package com.loc8.timekeeper.core.jpa.repository;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.notNullValue;
@@ -9,8 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.loc8.timekeeper.timekeeper_core.jpa.domain.TimeSheetStatus;
-import com.loc8.timekeeper.timekeeper_core.jpa.repository.TimeSheetStatusRepository;
+import com.loc8.timekeeper.core.TimekeeperCoreApplication;
+import com.loc8.timekeeper.core.jpa.domain.TimeSheetStatus;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = TimekeeperCoreApplication.class)

@@ -1,4 +1,4 @@
-package com.loc8.timekeeper.timekeeper_core.jpa.domain;
+package com.loc8.timekeeper.core.jpa.domain;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

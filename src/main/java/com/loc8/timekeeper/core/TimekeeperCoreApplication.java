@@ -1,4 +1,4 @@
-package com.loc8.timekeeper.timekeeper_core;
+package com.loc8.timekeeper.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
