@@ -31,7 +31,7 @@ public class TimeSheet extends AbstractEntity
 	@OneToMany(mappedBy = "timesheet", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<TimeSheetEntry> timeSheetEntries  = new HashSet<TimeSheetEntry>();
 
-	public String getName()
+	public String getName() 
 	{
 		return name;
 	}

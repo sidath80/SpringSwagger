@@ -17,12 +17,6 @@ public class TimeSheetEntry extends AbstractEntity
 	private Timestamp endDate;
 
 	@ManyToOne @PrimaryKeyJoinColumn 
-	private Rate rate;
-
-	@ManyToOne @PrimaryKeyJoinColumn 
-	private Project project;
-
-	@ManyToOne @PrimaryKeyJoinColumn 
 	private TimeSheetEntryType timeSheetEntryType;
 
 	@ManyToOne private TimeSheet timesheet;
@@ -55,26 +49,6 @@ public class TimeSheetEntry extends AbstractEntity
 	public void setEndDate(Timestamp endDate)
 	{
 		this.endDate = endDate;
-	}
-
-	public Rate getRate()
-	{
-		return rate;
-	}
-
-	public void setRate(Rate rate)
-	{
-		this.rate = rate;
-	}
-
-	public Project getProject()
-	{
-		return project;
-	}
-
-	public void setProject(Project project)
-	{
-		this.project = project;
 	}
 
 	public TimeSheetEntryType getTimeSheetEntryType()
