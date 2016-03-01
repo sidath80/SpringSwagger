@@ -9,7 +9,7 @@
 	<property name="severity" value="error"/>
 
 	<module name="SuppressionFilter">
-		<property name="file" value="${checkstyle.basedir}/checkstyle/checkstyle-suppressions-main.xml"/>
+		<property name="file" value="src/test/resources/checkstyle/suppressions.xml"/>
 	</module>
 
 	<!--
@@ -156,6 +156,7 @@
 			<property name="tokens" value="COMMA, SEMI"/>
 		</module>
 		<!--<module name="WhitespaceAround"/>-->
+		
 		<module name="FinalClass"/>
 		<module name="MissingSwitchDefault"/>
 		<!--<module name="MagicNumber"/>-->
