@@ -13,6 +13,7 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 
 import com.loc8.timekeeper.core.TimekeeperCoreApplication;
@@ -30,6 +31,7 @@ import com.loc8.timekeeper.core.jpa.domain.TimeSheetStatus;
     		scripts = "classpath:beforeTimeSheetRepositoryTestRun.sql"),
     @Sql(executionPhase = ExecutionPhase.AFTER_TEST_METHOD, 
     		scripts = "classpath:afterTimeSheetRepositoryTestRun.sql") })
+@WebAppConfiguration
 public class TimeSheetRepositoryTest
 {
 

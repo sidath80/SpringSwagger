@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.loc8.timekeeper.core.jpa.domain.Contact;
 import com.loc8.timekeeper.core.jpa.repository.ContactRepository;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 public class ContactRestController
 {
@@ -23,7 +25,7 @@ public class ContactRestController
 	private ContactRepository contactRepository;
 
 	// -------------------Retrieve All Contacts----------------------
-
+	@ApiOperation(value = "listAllContacts", nickname = "List of All Contacts")
 	@RequestMapping(value = "/contacts", method = RequestMethod.GET)
 	public ResponseEntity<List<Contact>> listAllContacts()
 	{

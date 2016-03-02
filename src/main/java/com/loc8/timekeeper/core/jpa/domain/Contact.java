@@ -6,12 +6,19 @@ import javax.persistence.PrimaryKeyJoinColumn;
 
 import org.springframework.util.Assert;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 public class Contact extends AbstractEntity
 {
 
+	@JsonProperty(required = true)
+    @ApiModelProperty(notes = "The name of the Contact", required = true)
 	private String name;
 	
+	@JsonProperty(required = true)
 	@ManyToOne
 	@PrimaryKeyJoinColumn
 	private Contact mnager;
